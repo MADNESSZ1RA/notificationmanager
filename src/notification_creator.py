@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from src.notification_storage import NotificationStorage
 from src.notifications import Notifier, DelayedNotification, ScheduledNotification, NotificationStrategy
@@ -49,6 +49,5 @@ class NotificationCreator:
                 except ValueError:
                     print(f"[ОШИБКА] Пропущено уведомление с неправильной датой: {datetime_str}")
 
-        # сортируем по времени
         notifications.sort(key=lambda x: x[0])
         return [strategy for _, strategy in notifications]

@@ -1,29 +1,41 @@
+import sys
+
+from datetime import datetime, timedelta
+
 from src.notifications import Notifier, NotificationManager
 from src.notification_storage import NotificationStorage
 from src.notification_creator import NotificationCreator
-from datetime import datetime, timedelta
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QApplication
+from ui.main_window import MainWindow
+
 
 if __name__ == "__main__":
-    notifier = Notifier()
-    storage = NotificationStorage()
-    creator = NotificationCreator(storage, notifier)
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
 
-    storage.clear_all()
+    # notifier = Notifier()
+    # storage = NotificationStorage()
+    # creator = NotificationCreator(storage, notifier)
 
-    # Примеры: текущее время + N минут
-    now = datetime.now()
-    creator.create_scheduled_notification(
-        (now + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M"),
-        "Уведомление 1",
-        "Через 2 минуты")
+    # storage.clear_all()
 
-    creator.create_scheduled_notification(
-        (now + timedelta(minutes=1)).strftime("%Y-%m-%d %H:%M"),
-        "Уведомление 2",
-        "Через 1 минуту")
+    # # Примеры: текущее время + N минут
+    # now = datetime.now()
+    # creator.create_scheduled_notification(
+    #     (now + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M"),
+    #     "Уведомление 1",
+    #     "Через 2 минуты")
 
-    # === Запуск всех уведомлений по времени ===
-    notifications = creator.load_notifications()
-    for notification_strategy in notifications:
-        manager = NotificationManager(notification_strategy)
-        manager.run()
+    # creator.create_scheduled_notification(
+    #     (now + timedelta(minutes=1)).strftime("%Y-%m-%d %H:%M"),
+    #     "Уведомление 2",
+    #     "Через 1 минуту")
+
+    # # === Запуск всех уведомлений по времени ===
+    # notifications = creator.load_notifications()
+    # for notification_strategy in notifications:
+    #     manager = NotificationManager(notification_strategy)
+    #     manager.run()
