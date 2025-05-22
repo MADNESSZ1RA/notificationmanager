@@ -31,5 +31,10 @@ class NotificationStorage:
         with open(self.file_path, "w", encoding="utf-8") as f:
             json.dump({"notifications": data}, f, indent=4)
 
+    def save_all(self, notifications_list: list[dict]):
+        with open(self.file_path, "w", encoding="utf-8") as f:
+            json.dump({"notifications": notifications_list}, f, indent=4, ensure_ascii=False)
+
+
     def clear_all(self):
         self._init_file()

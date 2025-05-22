@@ -2,68 +2,28 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Уведомлятор</title>
-    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
-    <script src="script.js"></script>
-    <style>
-      body {
-        font-family: sans-serif;
-        margin: 20px;
-      }
-      input,
-      select,
-      button {
-        padding: 10px;
-        margin: 5px 0;
-        width: 300px;
-        display: block;
-      }
-      .field {
-        margin-bottom: 10px;
-      }
-    </style>
+    <title>Создание уведомлений</title>
   </head>
   <body>
-    <h1>Создание уведомления</h1>
+    <h1>Создать уведомление</h1>
 
-    <div class="field">
-      <label for="type">Тип уведомления:</label>
-      <select id="type" onchange="updateFields()">
-        <option value="scheduled">По времени</option>
-        <option value="delayed">С задержкой</option>
-      </select>
-    </div>
+    <h2>По времени</h2>
+    <input type="time" id="scheduled-time" />
+    <input type="text" id="scheduled-title" placeholder="Заголовок" />
+    <input type="text" id="scheduled-message" placeholder="Сообщение" />
+    <button onclick="addScheduled()">Создать по времени</button>
 
-    <div class="field" id="timeField">
-      <label for="time">Время (формат: YYYY-MM-DD HH:MM):</label>
-      <input id="time" type="text" placeholder="2025-05-22 13:45" />
-    </div>
+    <h2>С задержкой</h2>
+    <input type="number" id="delay" placeholder="Задержка в секундах" />
+    <input type="text" id="delayed-title" placeholder="Заголовок" />
+    <input type="text" id="delayed-message" placeholder="Сообщение" />
+    <button onclick="addDelayed()">Создать с задержкой</button>
 
-    <div class="field" id="delayField" style="display: none">
-      <label for="delay">Задержка (в секундах):</label>
-      <input id="delay" type="number" min="1" placeholder="5" />
-    </div>
-
-    <div class="field">
-      <label for="title">Заголовок:</label>
-      <input id="title" type="text" placeholder="Заголовок уведомления" />
-    </div>
-
-    <div class="field">
-      <label for="message">Сообщение:</label>
-      <input id="message" type="text" placeholder="Текст уведомления" />
-    </div>
-
-    <button onclick="sendNotification()">Добавить уведомление</button>
     <hr />
-    <button onclick="startNotifications()">▶ Запустить уведомления</button>
+    <button onclick="goToList()">Посмотреть уведомления</button>
 
-    <script>
-      function startNotifications() {
-        if (bridge && bridge.startAllNotifications) {
-          bridge.startAllNotifications();
-        }
-      }
-    </script>
+    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+
+    <script src="../scripts/index.js"></script>
   </body>
 </html>
