@@ -1,100 +1,12 @@
 {
+    "work": true,
     "notifications": [
         {
-            "type": "scheduled",
-            "target_datetime": "2025-05-22 11:22",
-            "title": "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 1",
-            "message": "\u0427\u0435\u0440\u0435\u0437 2 \u043c\u0438\u043d\u0443\u0442\u044b"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "2025-05-22 11:21",
-            "title": "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 2",
-            "message": "\u0427\u0435\u0440\u0435\u0437 1 \u043c\u0438\u043d\u0443\u0442\u0443"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "\u0444",
-            "message": "\u0444"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "\u0444",
-            "message": "\u0444"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "12:23",
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "12:23",
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "12:23",
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "12:23",
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "scheduled",
-            "target_datetime": "12:23",
-            "title": "a",
-            "message": "a"
-        },
-        {
-            "type": "delayed",
-            "delay_seconds": 5,
-            "title": "0",
-            "message": "0"
+            "id": "dff08eb1-8da3-4828-82b6-01602646c906",
+            "type": "С задержкой",
+            "time": "2025-05-23 11:17",
+            "title": "йф",
+            "message": "ф"
         }
     ]
 }

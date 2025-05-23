@@ -46,24 +46,26 @@ class ScheduledNotification(NotificationStrategy):
         try:
             target = datetime.strptime(self.target_datetime, "%Y-%m-%d %H:%M")
         except ValueError:
-            print(f"[ОШИБКА] Неверный формат даты/времени: {self.target_datetime}")
+            print(
+                f"[ОШИБКА] Неверный формат даты/времени: {self.target_datetime}")
             return
 
         now = datetime.now()
         if target < now:
-            print(f"[ПРОПУЩЕНО] {self.title} — дата уже прошла: {self.target_datetime}")
+            print(
+                f"[ПРОПУЩЕНО] {self.title} — дата уже прошла: {self.target_datetime}")
             return
 
         seconds_left = (target - now).total_seconds()
 
         if seconds_left > 3600 * 24:
-            print(f"[ПРОПУЩЕНО] {self.title} — слишком далеко: {int(seconds_left // 60)} минут")
+            print(
+                f"[ПРОПУЩЕНО] {self.title} — слишком далеко: {int(seconds_left // 60)} минут")
             return
 
         print(f"Ожидание до {self.target_datetime} ({int(seconds_left)} сек.)")
         time.sleep(seconds_left)
         self.notifier.show_notification(self.title, self.message)
-
 
 
 class NotificationManager:
