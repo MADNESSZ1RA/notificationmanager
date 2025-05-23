@@ -25,12 +25,12 @@
     <widget class="QDateEdit" name="timeDateInput">
      <property name="dateTime">
       <datetime>
-       <hour>0</hour>
+       <hour>21</hour>
        <minute>0</minute>
        <second>0</second>
        <year>2025</year>
        <month>5</month>
-       <day>22</day>
+       <day>21</day>
       </datetime>
      </property>
     </widget>
@@ -39,7 +39,7 @@
     <widget class="QTimeEdit" name="timeTimeInput">
      <property name="dateTime">
       <datetime>
-       <hour>9</hour>
+       <hour>6</hour>
        <minute>0</minute>
        <second>0</second>
        <year>2000</year>
@@ -73,7 +73,7 @@
    <item row="2" column="0" colspan="3">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Создать уведомление с задержкой в секундах</string>
+      <string>Создать уведомление с задержкой в минутах</string>
      </property>
     </widget>
    </item>
