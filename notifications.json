@@ -1,12 +1,4 @@
 {
     "work": true,
-    "notifications": [
-        {
-            "id": "e7a36e3a-0295-4708-9ee0-0a23f761400d",
-            "type": "Запланированное",
-            "time": "2025-05-23 12:36",
-            "title": "dfgh",
-            "message": "sfdgh"
-        }
-    ]
+    "notifications": []
 }

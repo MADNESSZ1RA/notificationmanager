@@ -19,9 +19,9 @@ class IndexPage(QWidget, Ui_Index):
 
         self.main_window = main_window
         self.notifier = Notifier()
-
-        self.timeDateInput.setDate(QDate(currentDate := QDate.currentDate()))
+        self.timeDateInput.setDate(QDate.currentDate())
         self.timeTimeInput.setTime(QTime.currentTime())
+        self.timeTimeInput.setDisplayFormat("HH:mm")
 
         self.timeAddButton.clicked.connect(self.add_time)
         self.waitAddButton.clicked.connect(self.add_wait)
@@ -29,7 +29,7 @@ class IndexPage(QWidget, Ui_Index):
         self.radioButton.toggled.connect(self.toggle_notification_watcher)
 
         self.notification_timer = QTimer(self)
-        self.notification_timer.setInterval(60 * 1000)
+        self.notification_timer.setInterval(0)
         self.notification_timer.setTimerType(Qt.CoarseTimer)
         self.notification_timer.timeout.connect(self.check_notifications)
 
@@ -85,11 +85,12 @@ class IndexPage(QWidget, Ui_Index):
                 notif_id = n["id"]
                 if notif_id not in self.notified_ids:
                     self.notifier.show_notification(n["title"], n["message"])
+                    NotificationStorage.purge_processed()
                     self.notified_ids.add(notif_id)
 
     def add_time(self) -> None:
-        date_str = self.timeDateInput.text().strip()
-        time_str = self.timeTimeInput.text().strip()
+        date_str = self.timeDateInput.date().toString("dd.MM.yyyy")
+        time_str = self.timeTimeInput.time().toString("HH:mm")
         title = self.timeTitleInput.text().strip()
         message = self.timeDescriptionInput.text().strip()
 
