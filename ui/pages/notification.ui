@@ -6,21 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>414</width>
-    <height>98</height>
+    <width>610</width>
+    <height>102</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="gridWidget" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>10</y>
-     <width>341</width>
+     <width>461</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#gridWidget{
+    border: 2px solid black;
+}
+
+#gridWidget:hover{
+    background: #67BA80;
+}</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -56,7 +68,7 @@
   <widget class="QPushButton" name="deleteButton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>530</x>
      <y>40</y>
      <width>75</width>
      <height>24</height>

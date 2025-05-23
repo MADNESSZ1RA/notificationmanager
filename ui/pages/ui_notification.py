@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'notificationsNSPoG.ui'
+## Form generated from reading UI file 'notificationCaQCxC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.3
 ##
@@ -22,36 +22,43 @@ class Ui_notificationWidget(object):
     def setupUi(self, notificationWidget):
         if not notificationWidget.objectName():
             notificationWidget.setObjectName(u"notificationWidget")
-        notificationWidget.resize(414, 98)
-        self.gridLayoutWidget = QWidget(notificationWidget)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(0, 10, 341, 81))
-        self.gridLayout = QGridLayout(self.gridLayoutWidget)
+        notificationWidget.resize(610, 102)
+        notificationWidget.setStyleSheet(u"")
+        self.gridWidget = QWidget(notificationWidget)
+        self.gridWidget.setObjectName(u"gridWidget")
+        self.gridWidget.setGeometry(QRect(0, 10, 461, 81))
+        self.gridWidget.setStyleSheet(u"#gridWidget{\n"
+"    border: 2px solid black;\n"
+"}\n"
+"\n"
+"#gridWidget:hover{\n"
+"    background: #67BA80;\n"
+"}")
+        self.gridLayout = QGridLayout(self.gridWidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.type = QLabel(self.gridLayoutWidget)
+        self.type = QLabel(self.gridWidget)
         self.type.setObjectName(u"type")
 
         self.gridLayout.addWidget(self.type, 0, 0, 1, 1)
 
-        self.time = QLabel(self.gridLayoutWidget)
+        self.time = QLabel(self.gridWidget)
         self.time.setObjectName(u"time")
 
         self.gridLayout.addWidget(self.time, 1, 0, 1, 1)
 
-        self.title = QLabel(self.gridLayoutWidget)
+        self.title = QLabel(self.gridWidget)
         self.title.setObjectName(u"title")
 
         self.gridLayout.addWidget(self.title, 0, 1, 1, 1)
 
-        self.description = QLabel(self.gridLayoutWidget)
+        self.description = QLabel(self.gridWidget)
         self.description.setObjectName(u"description")
 
         self.gridLayout.addWidget(self.description, 1, 1, 1, 1)
 
         self.deleteButton = QPushButton(notificationWidget)
         self.deleteButton.setObjectName(u"deleteButton")
-        self.deleteButton.setGeometry(QRect(340, 40, 75, 24))
+        self.deleteButton.setGeometry(QRect(530, 40, 75, 24))
 
         self.retranslateUi(notificationWidget)
 

@@ -1,10 +1,11 @@
-from datetime import datetime, timedelta
 import json
 import os
-import uuid           
+import uuid
+
+from datetime import datetime, timedelta
 
 from PySide6.QtWidgets import QWidget, QMainWindow, QMessageBox
-from PySide6.QtCore import QTimer, Qt      
+from PySide6.QtCore import QTimer, Qt, QDate, QTime
 
 from ui.pages.ui_index import Ui_Index
 from src.notification_manager import NotificationStorage
@@ -18,6 +19,9 @@ class IndexPage(QWidget, Ui_Index):
 
         self.main_window = main_window
         self.notifier = Notifier()
+
+        self.timeDateInput.setDate(QDate(currentDate := QDate.currentDate()))
+        self.timeTimeInput.setTime(QTime.currentTime())
 
         self.timeAddButton.clicked.connect(self.add_time)
         self.waitAddButton.clicked.connect(self.add_wait)
@@ -82,7 +86,6 @@ class IndexPage(QWidget, Ui_Index):
                 if notif_id not in self.notified_ids:
                     self.notifier.show_notification(n["title"], n["message"])
                     self.notified_ids.add(notif_id)
-
 
     def add_time(self) -> None:
         date_str = self.timeDateInput.text().strip()

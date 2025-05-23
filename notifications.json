@@ -2,11 +2,11 @@
     "work": true,
     "notifications": [
         {
-            "id": "dff08eb1-8da3-4828-82b6-01602646c906",
-            "type": "С задержкой",
-            "time": "2025-05-23 11:17",
-            "title": "йф",
-            "message": "ф"
+            "id": "e7a36e3a-0295-4708-9ee0-0a23f761400d",
+            "type": "Запланированное",
+            "time": "2025-05-23 12:36",
+            "title": "dfgh",
+            "message": "sfdgh"
         }
     ]
 }
