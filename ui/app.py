@@ -9,6 +9,7 @@ from ui.index import IndexPage
 
 def run_app():
     app = QtWidgets.QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(False) 
     app.setWindowIcon(QIcon('ui/img/favicon.ico'))
 
     main_window = MainWindow()
